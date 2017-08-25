@@ -14,5 +14,9 @@ app.config['OAUTH_CREDENTIALS'] = {
     'facebook': {
         'id': 'example',
         'secret': 'example'
+    },
+    'twitter': {
+        'id': 'example',
+        'secret': 'example'
     }
 }
