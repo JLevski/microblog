@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, session, url_for, request, g
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db
 from .models import User, Post
-from oauth import OAuthSignIn  # this is the issue to be fixed
+from .oauth import OAuthSignIn  # this is the issue to be fixed
 from datetime import datetime
 from .forms import LoginForm, EditForm, PostForm
 from config import POSTS_PER_PAGE
@@ -153,7 +153,7 @@ def follow(nickname):
 
 @app.route('/unfollow/<nickname>')
 @login_required
-def follow(nickname):
+def unfollow(nickname):
     user = User.query.filter_by(nickname=nickname).first()
     if user is None:
         flash('User %s not found.' % nickname)

@@ -29,5 +29,5 @@ class EditForm(FlaskForm):
         return True
 
 
-class PostForm(Form):
+class PostForm(FlaskForm):
     post = StringField('post', validators=[DataRequired()])
