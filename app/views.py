@@ -4,9 +4,8 @@ from app import app, db
 from .models import User, Post
 from .oauth import OAuthSignIn
 from datetime import datetime
-from .forms import LoginForm, EditForm, PostForm
+from .forms import LoginForm, EditForm, PostForm, SearchForm
 from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS
-from forms import SearchForm
 
 
 @app.before_request

@@ -33,5 +33,5 @@ class PostForm(FlaskForm):
     post = StringField('post', validators=[DataRequired()])
 
 
-class SearchForm(Form):
+class SearchForm(FlaskForm):
     search = StringField('search', validators=[DataRequired()])
