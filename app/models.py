@@ -7,9 +7,10 @@ import flask_whooshalchemy as whooshalchemy
 
 
 followers = db.Table('followers',
-    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
-)
+                     db.Column('follower_id', db.Integer,
+                               db.ForeignKey('user.id')),
+                     db.Column('followed_id', db.Integer,
+                               db.ForeignKey('user.id')))
 
 
 class User(UserMixin, db.Model):
@@ -85,8 +86,8 @@ def load_user(id):
             .count() > 0
 
     def followed_posts(self):
-        return Posts.query.join(followers, (followers.c.followed_id ==
-                                            Post.user_id)).filter
+        return Post.query.join(followers, (followers.c.followed_id ==
+                                           Post.user_id)).filter
         (followers.c.follower_id == self.id).order_by(Post.timestamp.desc())
 
 
