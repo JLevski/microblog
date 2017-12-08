@@ -24,7 +24,7 @@ class TestCase(unittest.Testcase):
     def test_avatar(self):
         u = User(nickname='john', email='john@example.com')
         avatar = u.avatar(128)
-        expected = 'http://www.gravatar.com/avatar/d4c74594d841139328695756648b6bd6'
+        expected = 'http://www.gravatar.com/avatar/d4c74594d841139328695756648b6bd6'  # noqa
         assert avatar[0:len(expected)] == expected
 
     def test_make_unique_nickname(self):
@@ -76,10 +76,14 @@ class TestCase(unittest.Testcase):
         db.session.add(u4)
         # make four posts
         utcnow = datetime.utcnow()
-        p1 = Post(body="post from john", author=u1, timestamp=utcnow + timedelta(seconds=1))
-        p2 = Post(body="post from susan", author=u2, timestamp=utcnow + timedelta(seconds=2))
-        p3 = Post(body="post from mary", author=u3, timestamp=utcnow + timedelta(seconds=3))
-        p4 = Post(body="post from david", author=u4, timestamp=utcnow + timedelta(seconds=4))
+        p1 = Post(body="post from john", author=u1, timestamp=utcnow +
+                  timedelta(seconds=1))
+        p2 = Post(body="post from susan", author=u2, timestamp=utcnow +
+                  timedelta(seconds=2))
+        p3 = Post(body="post from mary", author=u3, timestamp=utcnow +
+                  timedelta(seconds=3))
+        p4 = Post(body="post from david", author=u4,
+                  timestamp=utcnow + timedelta(seconds=4))
         db.session.add(p1)
         db.session.add(p2)
         db.session.add(p3)

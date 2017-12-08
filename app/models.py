@@ -1,7 +1,6 @@
 from app import db, lm
 from app import app
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, UserMixin
+from flask_login import UserMixin
 from hashlib import md5
 import flask_whooshalchemy as whooshalchemy
 

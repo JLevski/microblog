@@ -12,4 +12,3 @@ guess_language
 flipflop
 coverage
 rauth
-thread
