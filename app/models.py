@@ -7,9 +7,9 @@ import flask_whooshalchemy as whooshalchemy
 
 followers = db.Table('followers',
                      db.Column('follower_id', db.Integer,
-                               db.ForeignKey('user.id')),
+                               db.ForeignKey('users.id')),
                      db.Column('followed_id', db.Integer,
-                               db.ForeignKey('user.id')))
+                               db.ForeignKey('users.id')))
 
 
 class User(UserMixin, db.Model):
@@ -43,11 +43,6 @@ class User(UserMixin, db.Model):
     def avatar(self, size):
         return ('http://www.gravatar.com/avatar/%s?d=mm&s=%d'
                 % (md5(self.email.encode('utf-8')).hexdigest(), size))
-
-
-@lm.user_loader
-def load_user(id):
-    return User.query.get(int(id))
 
     @property
     def is_authenticated(self):
@@ -85,9 +80,15 @@ def load_user(id):
             .count() > 0
 
     def followed_posts(self):
-        return Post.query.join(followers, (followers.c.followed_id ==
-                                           Post.user_id)).filter
-        (followers.c.follower_id == self.id).order_by(Post.timestamp.desc())
+        return Post.query.join(
+            followers, (followers.c.followed_id == Post.user_id)).filter(
+                followers.c.follower_id == self.id).order_by(
+                    Post.timestamp.desc())
+
+
+@lm.user_loader
+def load_user(id):
+    return User.query.get(int(id))
 
 
 class Post(db.Model):
@@ -96,7 +97,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __repr__(self):
         return '<Post %r>' % (self.body)
