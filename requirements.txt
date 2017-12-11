@@ -5,7 +5,7 @@ flask-openid==1.2.5
 flask-mail==0.9.1
 flask-sqlalchemy==2.3.2
 sqlalchemy-migrate==0.11.0
-flask-whooshalchemy
+flask-whooshalchemy==0.56
 flask-wtf
 flask-babel
 guess_language
