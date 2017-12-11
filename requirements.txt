@@ -9,6 +9,6 @@ flask-whooshalchemy==0.56
 flask-wtf==0.14.2
 flask-babel==0.11.2
 guess_language==0.2
-flipflop
+flipflop==1.0
 coverage
 rauth
