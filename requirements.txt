@@ -1,6 +1,6 @@
 # run with pip3 install -r requirements.txt
 flask==0.12.2
-flask-login
+flask-login==0.4.1
 flask-openid
 flask-mail
 flask-sqlalchemy
