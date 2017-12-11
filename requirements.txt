@@ -1,5 +1,5 @@
 # run with pip3 install -r requirements.txt
-flask
+flask==0.12.2
 flask-login
 flask-openid
 flask-mail
