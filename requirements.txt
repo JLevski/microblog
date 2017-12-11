@@ -7,7 +7,7 @@ flask-sqlalchemy==2.3.2
 sqlalchemy-migrate==0.11.0
 flask-whooshalchemy==0.56
 flask-wtf==0.14.2
-flask-babel
+flask-babel==0.11.2
 guess_language
 flipflop
 coverage
