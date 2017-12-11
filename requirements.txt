@@ -2,7 +2,7 @@
 flask==0.12.2
 flask-login==0.4.1
 flask-openid==1.2.5
-flask-mail
+flask-mail==0.9.1
 flask-sqlalchemy
 sqlalchemy-migrate
 flask-whooshalchemy
