@@ -6,7 +6,7 @@ flask-mail==0.9.1
 flask-sqlalchemy==2.4.0
 sqlalchemy-migrate==0.12.0
 flask-whooshalchemy==0.56
-flask-wtf==0.14.2
+flask-wtf==1.0.1
 flask-babel==0.12.2
 guess_language==0.2
 flipflop==1.0
