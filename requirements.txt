@@ -10,5 +10,5 @@ flask-wtf==0.14.2
 flask-babel==0.12.2
 guess_language==0.2
 flipflop==1.0
-coverage==4.5.3
+coverage==7.0.5
 rauth==0.7.3
